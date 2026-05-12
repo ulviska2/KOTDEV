@@ -101,7 +101,6 @@ document.querySelectorAll('.game-slider').forEach(slider => {
         });
     }
 
-    // Свайп для телефона
     let startX = 0;
     track.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
@@ -119,7 +118,6 @@ document.querySelectorAll('.game-slider').forEach(slider => {
         }
     });
 
-    // Колёсико мыши
     track.addEventListener('wheel', (e) => {
         e.preventDefault();
         if (e.deltaX > 0 || e.deltaY > 0) {
@@ -129,4 +127,16 @@ document.querySelectorAll('.game-slider').forEach(slider => {
         }
         update();
     }, { passive: false });
+});const burger = document.getElementById('burger');
+const nav = document.getElementById('nav');
+const overlay = document.getElementById('overlay');
+
+burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    overlay.classList.toggle('active');
+});
+
+overlay.addEventListener('click', () => {
+    nav.classList.remove('active');
+    overlay.classList.remove('active');
 });
