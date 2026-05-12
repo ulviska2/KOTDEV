@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -16,10 +20,9 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/fon.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #0a0c10;
+    background-image: radial-gradient(rgba(5, 182, 217, 0.15) 1px, transparent 1px);
+    background-size: 30px 30px;
     z-index: -1;
     opacity: 0.55;
 }
@@ -50,13 +53,13 @@ body::before {
 .emblem {
     width: 48px;
     height: 48px;
-    border-radius: 50%;
-    background: var(--card-bg);
+    border-radius: 0;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid var(--accent);
-    box-shadow: 0 0 12px rgba(0,180,216,0.2);
+    border: none;
+    box-shadow: none;
     transition: transform 0.3s ease;
 }
 .emblem:hover {
@@ -425,5 +428,33 @@ a {
     .header {
         flex-direction: column;
         gap: 16px;
+    }
+}
+
+.portfolio-sel {
+    display: grid;
+    gap: 24px;
+}
+@media (min-width: 1024px) {
+    .portfolio-sel {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    .portfolio-sel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 767px) {
+    .portfolio-sel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 16px;
+        max-width: 100vw;
+    }
+    .game-card {
+        flex: 0 0 85vw;
+        scroll-snap-align: center;
     }
 }

@@ -92,6 +92,7 @@ document.querySelectorAll('.game-slider').forEach(slider => {
         });
     }
 
+    // Свайп для телефона
     let startX = 0;
     track.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
@@ -108,4 +109,15 @@ document.querySelectorAll('.game-slider').forEach(slider => {
             update();
         }
     });
+
+    // Колёсико мыши
+    track.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        if (e.deltaX > 0 || e.deltaY > 0) {
+            index = (index + 1) % images.length;
+        } else {
+            index = (index - 1 + images.length) % images.length;
+        }
+        update();
+    }, { passive: false });
 });
