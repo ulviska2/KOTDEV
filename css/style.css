@@ -15,8 +15,7 @@ body {
 }
 body::before {
     content: '';
-    background-color: #1a404e;
-    background-image: radial-gradient(rgba(0, 168, 202, 0.581));
+    background-color: #111e23;
     background-size: 30px 30px;
     z-index: -1;
     opacity: 0.55;
@@ -45,34 +44,9 @@ body::before {
     align-items: center;
     gap: 16px;
 }
-.emblem {
-    width: 48px;
-    height: 48px;
-    border-radius: 0;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    box-shadow: none;
-    transition: transform 0.3s ease;
-}
-.emblem:hover {
-    transform: scale(1.08);
-}
-.emblem img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-.studio-name {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    color: #ffffff;
-}
-.studio-name span {
-    color: var(--accent);
+.logo-img {
+    height: 40px;
+    width: auto;
 }
 .nav {
     display: flex;
