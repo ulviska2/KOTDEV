@@ -11,11 +11,20 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    position: relative;
+    font-family: 'Inter', sans-serif;
+    color: #e0e0e0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 body::before {
     content: '';
-    background-color: #091317;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #061214;
+    background-image: radial-gradient(rgba(0, 180, 216, 0.02) 1px, transparent 1px);
     background-size: 30px 30px;
     z-index: -1;
     opacity: 1;
@@ -64,10 +73,11 @@ body::before {
     color: var(--accent);
 }
 .hero {
-    background-image: url(images/texture.jpg);
-    background-size: cover;
-    background-blend-mode: overlay;
-    opacity: 0.4;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
 }
 .hero-text {
     flex: 1 1 500px;
@@ -97,9 +107,7 @@ body::before {
     flex: 0 0 240px;
     width: 240px;
     height: 240px;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
+    opacity: 1;
 }
 .hero-photo img {
     width: 100%;
@@ -378,6 +386,19 @@ a {
     border-color: var(--border);
     transform: translateY(-2px);
 }
+.about-video {
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+.about-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 @media (max-width: 768px) {
     .hero {
@@ -399,29 +420,47 @@ a {
 }
 
 .portfolio-sel {
-    display: grid;
+    display: flex;
+    overflow-x: auto;
     gap: 24px;
+    padding-bottom: 16px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--card-bg);
 }
-@media (min-width: 1024px) {
-    .portfolio-sel {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.portfolio-sel::-webkit-scrollbar {
+    height: 6px;
 }
-@media (min-width: 768px) and (max-width: 1023px) {
-    .portfolio-sel {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.portfolio-sel::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 6px;
 }
+
+.game-card {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    min-height: 500px;
+    max-height: 600px;
+}
+
 @media (max-width: 767px) {
-    .portfolio-sel {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 16px;
-        max-width: 100vw;
-    }
     .game-card {
         flex: 0 0 85vw;
-        scroll-snap-align: center;
     }
+}.game-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+}
+.game-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+[data-i18n] {
+    transition: opacity 0.5s ease;
 }

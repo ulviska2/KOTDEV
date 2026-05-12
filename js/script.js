@@ -1,16 +1,25 @@
 function applyLanguage(lang) {
   const elements = document.querySelectorAll('[data-i18n]');
+  
   elements.forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (i18n[lang] && i18n[lang][key]) {
-      const text = i18n[lang][key];
-      if (text.includes('<') && (text.includes('<br>') || text.includes('<strong>'))) {
-        el.innerHTML = text;
-      } else {
-        el.textContent = text;
-      }
-    }
+    el.style.opacity = '0';
   });
+  
+  setTimeout(() => {
+    elements.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (i18n[lang] && i18n[lang][key]) {
+        const text = i18n[lang][key];
+        if (text.includes('<') && (text.includes('<br>') || text.includes('<strong>'))) {
+          el.innerHTML = text;
+        } else {
+          el.textContent = text;
+        }
+      }
+      el.style.opacity = '1';
+    });
+  }, 200);
+  
   document.documentElement.lang = lang;
   const links = document.querySelectorAll('.lang-switch a');
   links.forEach(link => {
