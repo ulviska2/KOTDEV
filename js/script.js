@@ -48,6 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
 (function() {
     const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
     const isAndroid = /Android/i.test(navigator.userAgent);
+    const isMac = /Macintosh/i.test(navigator.userAgent);
+    const isWindows = /Windows/i.test(navigator.userAgent);
     
     const links = document.querySelectorAll('.game-store-link');
     
@@ -65,12 +67,19 @@ document.addEventListener('DOMContentLoaded', () => {
             link.href = androidUrl;
             if (icon) icon.className = 'fab fa-google-play';
             if (text) text.textContent = 'Google Play';
+        } else if (isMac && iosUrl) {
+            link.href = iosUrl;
+            if (icon) icon.className = 'fab fa-app-store-ios';
+            if (text) text.textContent = 'App Store';
+        } else if (isWindows && androidUrl) {
+            link.href = androidUrl;
+            if (icon) icon.className = 'fab fa-google-play';
+            if (text) text.textContent = 'Google Play';
         } else {
             link.href = androidUrl || iosUrl || '#';
         }
     });
 })();
-
 document.querySelectorAll('.game-slider').forEach(slider => {
     const track = slider.querySelector('.slider-track');
     const images = track.querySelectorAll('img');
@@ -127,9 +136,17 @@ document.querySelectorAll('.game-slider').forEach(slider => {
         }
         update();
     }, { passive: false });
-});const burger = document.getElementById('burger');
+});
+const burger = document.getElementById('burger');
 const nav = document.getElementById('nav');
 const overlay = document.getElementById('overlay');
+const navLinks = document.querySelectorAll('.nav a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+});
 
 burger.addEventListener('click', () => {
     nav.classList.toggle('active');
@@ -139,4 +156,34 @@ burger.addEventListener('click', () => {
 overlay.addEventListener('click', () => {
     nav.classList.remove('active');
     overlay.classList.remove('active');
+});
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.section').forEach(section => {
+    observer.observe(section);
+});
+window.addEventListener('beforeunload', () => {
+    localStorage.setItem('scrollPosition', window.scrollY);
+});
+
+window.addEventListener('load', () => {
+    const savedPosition = localStorage.getItem('scrollPosition');
+    if (savedPosition) {
+        window.scrollTo(0, parseInt(savedPosition));
+    }
+});
+const scrollTopBtn = document.querySelector('.scroll-top');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('visible');
+    } else {
+        scrollTopBtn.classList.remove('visible');
+    }
 });
