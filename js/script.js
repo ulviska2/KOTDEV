@@ -36,3 +36,76 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+(function() {
+    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    
+    const links = document.querySelectorAll('.game-store-link');
+    
+    links.forEach(link => {
+        const androidUrl = link.getAttribute('data-android');
+        const iosUrl = link.getAttribute('data-ios');
+        const icon = link.querySelector('i');
+        const text = link.querySelector('.store-text');
+        
+        if (isIOS && iosUrl) {
+            link.href = iosUrl;
+            if (icon) icon.className = 'fab fa-app-store-ios';
+            if (text) text.textContent = 'App Store';
+        } else if (isAndroid && androidUrl) {
+            link.href = androidUrl;
+            if (icon) icon.className = 'fab fa-google-play';
+            if (text) text.textContent = 'Google Play';
+        } else {
+            link.href = androidUrl || iosUrl || '#';
+        }
+    });
+})();
+
+document.querySelectorAll('.game-slider').forEach(slider => {
+    const track = slider.querySelector('.slider-track');
+    const images = track.querySelectorAll('img');
+    const prevBtn = slider.querySelector('.prev');
+    const nextBtn = slider.querySelector('.next');
+    let index = 0;
+
+    if (images.length > 0) {
+        images[0].classList.add('active');
+    }
+
+    function update() {
+        images.forEach(img => img.classList.remove('active'));
+        images[index].classList.add('active');
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            index = (index + 1) % images.length;
+            update();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            index = (index - 1 + images.length) % images.length;
+            update();
+        });
+    }
+
+    let startX = 0;
+    track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+    track.addEventListener('touchend', (e) => {
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                index = (index + 1) % images.length;
+            } else {
+                index = (index - 1 + images.length) % images.length;
+            }
+            update();
+        }
+    });
+});

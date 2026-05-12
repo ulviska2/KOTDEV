@@ -19,13 +19,20 @@
                 </div>
                 <div class="studio-name">KOTDEV <span>Studio</span></div>
             </div>
+            <nav class="nav">
+    <a href="#home" data-i18n="nav.home">Главная</a>
+    <a href="#KOTDEV Studio" data-i18n="nav.KOTDEV Studio">KOTDEV Studio</a>
+    <a href="#skills" data-i18n="nav.skills">Навыки</a>
+    <a href="#portfolio" data-i18n="nav.portfolio">Портфолио</a>
+    <a href="#contact" data-i18n="nav.contact">Контакты</a>
+</nav>
             <div class="lang-switch">
                 <a href="#" class="active" data-lang="ru">RU</a>
                 <span>/</span>
                 <a href="#" data-lang="en">EN</a>
             </div>
         </header>
-        <section class="hero">
+        <section class="hero" id="home">
             <div class="hero-text">
                 <h1><span data-i18n="hero.name">Виталий</span> <span>Кот</span></h1>
                 <p class="subtitle" data-i18n="hero.role">Senior Unity Developer</p>
@@ -40,9 +47,9 @@
             </div>
         </section>
     </div>
-    <div class="section" style="border-top:1px solid var(--border);">
+    <div class="section" id="KOTDEV Studio" style="border-top:1px solid var(--border);">
         <div class="container">
-            <h2 data-i18n="about.title">О KOTDEV Studio</h2>
+            <h2 data-i18n="about.title">KOTDEV Studio</h2>
             <div style="max-width: 800px; margin-bottom: 32px;">
                 <p style="font-size: 18px; color: #c0c8d0;" data-i18n="about.text">
                     <strong>KOTDEV Studio</strong> — это не офис и не печать в договоре. Это просто мой личный бренд, за которым стою я и моя мечта.<br><br>
@@ -56,7 +63,7 @@
             </div>
         </div>
     </div>
-    <div class="section">
+    <div class="section" id="experience">
         <div class="container">
             <h2 data-i18n="experience.title">Опыт работы</h2>
             <div class="timeline">
@@ -92,7 +99,7 @@
             </div>
         </div>
     </div>
-    <div class="section">
+    <div class="section" id="skills">
         <div class="container">
             <h2 data-i18n="skills.title">Навыки</h2>
             <div class="skills-grid">
@@ -149,51 +156,168 @@
             </div>
         </div>
     </div>
-    <div class="section">
-        <div class="container">
-            <h2 data-i18n="portfolio.title">Портфолио</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <h3 data-i18n="portfolio.proj1.title">I am Not a Robot: Головоломки</h3>
-                    <div class="status" data-i18n="portfolio.proj1.status">Google Play • 2025</div>
-                    <div class="desc" data-i18n="portfolio.proj1.desc">Архитектура, механики, аналитика, релиз.</div>
-                    <a href="#" target="_blank"><i class="fab fa-google-play"></i> <span data-i18n="portfolio.watch">Смотреть</span></a>
+   <div class="section" id="portfolio">
+    <div class="container">
+        <h2 data-i18n="portfolio.title">Портфолио</h2>
+        <div class="portfolio-carousel">
+            <div class="game-card">
+                <div class="game-icon">
+                    <img src="images/game1-icon.png" alt="Иконка игры">
                 </div>
-                <div class="portfolio-card">
-                    <h3 data-i18n="portfolio.proj2.title">SushiRoll 3D – Cooking ASMR</h3>
-                    <div class="status">Google Play</div>
-                    <div class="desc" data-i18n="portfolio.proj2.desc">Разработка, оптимизация, UI.</div>
-                    <a href="#" target="_blank"><i class="fab fa-google-play"></i> <span data-i18n="portfolio.watch">Смотреть</span></a>
+                <h3>I am Not a Robot: Головоломки</h3>
+                <p class="game-desc">Архитектура, механики, аналитика, релиз.</p>
+                <div class="game-slider">
+                    <button class="slider-btn prev">‹</button>
+                    <div class="slider-track">
+                        <img src="images/game1-screen1.jpg" alt="Скриншот 1">
+                        <img src="images/game1-screen2.jpg" alt="Скриншот 2">
+                        <img src="images/game1-screen3.jpg" alt="Скриншот 3">
+                        <img src="images/game1-screen4.jpg" alt="Скриншот 4">
+                        <img src="images/game1-screen5.jpg" alt="Скриншот 5">
+                    </div>
+                    <button class="slider-btn next">›</button>
                 </div>
-                <div class="portfolio-card">
-                    <h3 data-i18n="portfolio.proj3.title">Blend It 3D</h3>
-                    <div class="status">Google Play</div>
-                    <div class="desc" data-i18n="portfolio.proj3.desc">Механики, физика, SDK.</div>
-                    <a href="#" target="_blank"><i class="fab fa-google-play"></i> <span data-i18n="portfolio.watch">Смотреть</span></a>
-                </div>
-                <div class="portfolio-card">
-                    <h3 data-i18n="portfolio.proj4.title">Merge Animals 3D</h3>
-                    <div class="status">Google Play</div>
-                    <div class="desc" data-i18n="portfolio.proj4.desc">Система слияния, 3D-модели, оптимизация.</div>
-                    <a href="#" target="_blank"><i class="fab fa-google-play"></i> <span data-i18n="portfolio.watch">Смотреть</span></a>
-                </div>
-                <div class="portfolio-card">
-                    <h3 data-i18n="portfolio.proj5.title">Dreamdale – Мир приключений</h3>
-                    <div class="status">Google Play</div>
-                    <div class="desc" data-i18n="portfolio.proj5.desc">RPG-механики, оптимизация, ассеты.</div>
-                    <a href="#" target="_blank"><i class="fab fa-google-play"></i> <span data-i18n="portfolio.watch">Смотреть</span></a>
-                </div>
-                <div class="portfolio-card">
-                    <h3 data-i18n="portfolio.proj6.title">DJ Mix Machine – Music Maker</h3>
-                    <div class="status" data-i18n="portfolio.proj6.status">Архивный проект</div>
-                    <div class="desc" data-i18n="portfolio.proj6.desc">Музыкальное приложение, звуковые библиотеки, SDK.</div>
-                </div>
-                <div class="portfolio-card">
-                    <h3 data-i18n="portfolio.proj7.title">VR-прототип (Oculus Quest 2)</h3>
-                    <div class="status" data-i18n="portfolio.proj7.status">Личный проект</div>
-                    <div class="desc" data-i18n="portfolio.proj7.desc">Самостоятельное изучение Unity XR, взаимодействие, оптимизация.</div>
-                </div>
+                <a href="#" class="game-link game-store-link" 
+                   data-android="https://play.google.com/store/apps/details?id=com.playstrom.robot.brain&pcampaignid=web_share" 
+                   data-ios="https://apps.apple.com/us/app/i-am-not-a-robot-%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%BB%D0%BE%D0%BC%D0%BA%D0%B8/id6751884210?l=ru">
+                    <i class="fab fa-google-play"></i> <span class="store-text">Смотреть</span>
+                </a>
             </div>
+            <div class="game-card">
+                <div class="game-icon">
+                    <img src="images/game2-icon.png" alt="Иконка игры">
+                </div>
+                <h3>SushiRoll 3D – Ресторан Суши</h3>
+                <p class="game-desc">Разработка, оптимизация, UI.</p>
+                <div class="game-slider">
+                    <button class="slider-btn prev">‹</button>
+                    <div class="slider-track">
+                        <img src="images/game2-screen1.jpg" alt="Скриншот 1">
+                        <img src="images/game2-screen2.jpg" alt="Скриншот 2">
+                        <img src="images/game2-screen3.jpg" alt="Скриншот 3">
+                        <img src="images/game2-screen4.jpg" alt="Скриншот 4">
+                        <img src="images/game2-screen5.jpg" alt="Скриншот 5">
+                    </div>
+                    <button class="slider-btn next">›</button>
+                </div>
+                <a href="#" class="game-link game-store-link" 
+                   data-android="https://play.google.com/store/apps/details?id=com.sushirolls.app&pcampaignid=web_share" 
+                   data-ios="https://apps.apple.com/us/app/sushi-roll-3d-%D1%80%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD-%D1%81%D1%83%D1%88%D0%B8/id1538288955?l=ru">
+                    <i class="fab fa-google-play"></i> <span class="store-text">Смотреть</span>
+                </a>
+            </div>
+
+            <div class="game-card">
+                <div class="game-icon">
+                    <img src="images/game3-icon.png" alt="Иконка игры">
+                </div>
+                <h3>Blend It 3D</h3>
+                <p class="game-desc">Механики, физика, SDK.</p>
+                <div class="game-slider">
+                    <button class="slider-btn prev">‹</button>
+                    <div class="slider-track">
+                        <img src="images/game3-screen1.jpg" alt="Скриншот 1">
+                        <img src="images/game3-screen2.jpg" alt="Скриншот 2">
+                        <img src="images/game3-screen3.jpg" alt="Скриншот 3">
+                        <img src="images/game3-screen4.jpg" alt="Скриншот 4">
+                        <img src="images/game3-screen5.jpg" alt="Скриншот 5">
+                    </div>
+                    <button class="slider-btn next">›</button>
+                </div>
+                <a href="#" class="game-link game-store-link" 
+                   data-android="https://play.google.com/store/apps/details?id=com.blendergame.smash&pcampaignid=web_share" 
+                   data-ios="https://apps.apple.com/us/app/blend-it-3d/id1498438583?l=ru">
+                    <i class="fab fa-google-play"></i> <span class="store-text">Смотреть</span>
+                </a>
+            </div>
+
+            <div class="game-card">
+                <div class="game-icon">
+                    <img src="images/game4-icon.png" alt="Иконка игры">
+                </div>
+                <h3>Merge Animals 3D</h3>
+                <p class="game-desc">Система слияния, 3D-модели, оптимизация.</p>
+                <div class="game-slider">
+                    <button class="slider-btn prev">‹</button>
+                    <div class="slider-track">
+                        <img src="images/game4-screen1.jpg" alt="Скриншот 1">
+                        <img src="images/game4-screen2.jpg" alt="Скриншот 2">
+                        <img src="images/game4-screen3.jpg" alt="Скриншот 3">
+                        <img src="images/game4-screen4.jpg" alt="Скриншот 4">
+                        <img src="images/game4-screen5.jpg" alt="Скриншот 5">
+                    </div>
+                    <button class="slider-btn next">›</button>
+                </div>
+                <a href="#" class="game-link game-store-link" 
+                   data-android="https://play.google.com/store/apps/details?id=com.merge.animals&pcampaignid=web_share" 
+                   data-ios="https://apps.apple.com/us/app/merge-animals-3d-mutant-race/id1591653599?l=ru">
+                    <i class="fab fa-google-play"></i> <span class="store-text">Смотреть</span>
+                </a>
+            </div>
+
+            <div class="game-card">
+                <div class="game-icon">
+                    <img src="images/game5-icon.png" alt="Иконка игры">
+                </div>
+                <h3>Dreamdale – Мир приключений</h3>
+                <p class="game-desc">RPG-механики, оптимизация, ассеты.</p>
+                <div class="game-slider">
+                    <button class="slider-btn prev">‹</button>
+                    <div class="slider-track">
+                        <img src="images/game5-screen1.jpg" alt="Скриншот 1">
+                        <img src="images/game5-screen2.jpg" alt="Скриншот 2">
+                        <img src="images/game5-screen3.jpg" alt="Скриншот 3">
+                        <img src="images/game5-screen4.jpg" alt="Скриншот 4">
+                        <img src="images/game5-screen5.jpg" alt="Скриншот 5">
+                    </div>
+                    <button class="slider-btn next">›</button>
+                </div>
+                <a href="#" class="game-link game-store-link" 
+                   data-android="https://play.google.com/store/apps/details?id=com.dream.dale&pcampaignid=web_share" 
+                   data-ios="https://apps.apple.com/us/app/dreamdale/id1517564300?l=ru">
+                    <i class="fab fa-google-play"></i> <span class="store-text">Смотреть</span>
+                </a>
+            </div>
+   <div class="game-card game-card-inactive">
+     <div class="game-icon">
+        <img src="images/game6-icon.png" alt="Иконка игры">
+    </div>
+    <h3>DJ Mix Machine – Music Maker</h3>
+    <p class="game-desc">Музыкальное приложение, звуковые библиотеки, SDK.</p>
+    <div class="game-slider-placeholder">
+        <i class="fas fa-archive"></i>
+        <span>Архивный проект</span>
+    </div>
+</div>
+
+<div class="game-card game-card-inactive">
+    <div class="game-icon">
+        <img src="images/game-archive-icon.png" alt="Иконка игры">
+    </div>
+    <h3>Личный проект (команда друзей)</h3>
+    <p class="game-desc">Прототип с нуля: архитектура, механики, UI, SDK.</p>
+    <div class="game-slider-placeholder">
+        <i class="fas fa-code"></i>
+        <span>В разработке</span>
+    </div>
+</div>
+
+<div class="game-card game-card-inactive">
+    <div class="game-icon">
+        <img src="images/game-archive-icon.png" alt="Иконка игры">
+    </div>
+    <h3>VR-прототип (Oculus Quest 2)</h3>
+    <p class="game-desc">Unity XR, взаимодействие, оптимизация.</p>
+    <div class="game-slider-placeholder">
+        <i class="fas fa-vr-cardboard"></i>
+        <span>Личный проект</span>
+    </div>
+</div>
+           
+
+        </div>
+    </div>
+</div>
         </div>
     </div>
     <div class="section" id="contact">
