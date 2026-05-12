@@ -18,7 +18,7 @@ function applyLanguage(lang) {
       }
       el.style.opacity = '1';
     });
-  }, 2000);
+  }, 1000);
   
   document.documentElement.lang = lang;
   const links = document.querySelectorAll('.lang-switch a');
@@ -192,6 +192,6 @@ if (preloader) {
     window.addEventListener('load', () => {
         setTimeout(() => {
             preloader.classList.add('hide');
-        }, 10000);
+        }, 2000)
     });
 }
