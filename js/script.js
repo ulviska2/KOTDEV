@@ -187,3 +187,26 @@ window.addEventListener('scroll', () => {
         scrollTopBtn.classList.remove('visible');
     }
 });
+const photo = document.querySelector('.hero-photo');
+
+if (photo) {
+    photo.addEventListener('mousemove', (e) => {
+        const rect = photo.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / centerY * -10;
+        const rotateY = (x - centerX) / centerX * 10;
+        
+        photo.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        photo.querySelector('img').style.transform = 'scale(1.05)';
+    });
+    
+    photo.addEventListener('mouseleave', () => {
+        photo.style.transform = 'perspective(600px) rotateX(0deg) rotateY(0deg)';
+        photo.querySelector('img').style.transform = 'scale(1)';
+    });
+}
